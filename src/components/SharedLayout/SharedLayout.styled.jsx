@@ -6,6 +6,7 @@ export const Container = styled.div`
 
   margin: 0 auto;
 
+  padding-top: 120px;
   padding-left: 64px;
   padding-right: 64px;
 `;
