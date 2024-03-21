@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 84px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  background-color: transparent;
+  background-color: ${(p) => p.theme.colors.lightGrey};
   display: flex;
   align-items: center;
 `;
