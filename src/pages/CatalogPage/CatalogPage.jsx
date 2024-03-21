@@ -1,7 +1,9 @@
+import { Catalog } from "../../components/Catalog/Catalog";
+
 const CatalogPage = () => {
   return (
     <div>
-      <h1>CatalogPage</h1>
+      <Catalog />
     </div>
   );
 };
