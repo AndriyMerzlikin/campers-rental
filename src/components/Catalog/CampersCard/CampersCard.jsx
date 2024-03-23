@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import Modal from "react-modal";
+Modal.setAppElement("#root");
+
 import sprite from "../../../assets/sprite.svg";
 import {
   CarImg,
@@ -23,6 +26,7 @@ import {
   TitleInfoBox,
   TitleInfoLine,
 } from "./CampersCard.styled";
+import CardModal from "../CardModal/CardModal";
 
 // eslint-disable-next-line react/prop-types
 export const CampersCard = ({
@@ -41,10 +45,22 @@ export const CampersCard = ({
     transmission,
   },
 }) => {
-  const [isClicked, setIsClicked] = useState(false);
+  //   const [isClicked, setIsClicked] = useState(false);
 
-  const handleHeartClick = () => {
-    setIsClicked(!isClicked);
+  //   const handleHeartClick = () => {
+  //     setIsClicked(!isClicked);
+  //   };
+
+  // modal
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -56,8 +72,8 @@ export const CampersCard = ({
             <CardTitle>{name}</CardTitle>
             <PriceBox>
               <CardPrice>€{price}.00</CardPrice>
-              <HeartBtn onClick={handleHeartClick}>
-                <HeartSvg isClicked={isClicked} width="24px" height="24px">
+              <HeartBtn>
+                <HeartSvg width="24px" height="24px">
                   <use xlinkHref={sprite + "#heart"} />
                 </HeartSvg>
               </HeartBtn>
@@ -123,8 +139,17 @@ export const CampersCard = ({
             <Optionstext>AC</Optionstext>
           </OptionsItem>
         </OptionsList>
-        <ShowMoreBtn>Show more</ShowMoreBtn>
+        <ShowMoreBtn onClick={openModal}>Show more</ShowMoreBtn>
       </CardInfoBox>
+
+      {/* Modal Component */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Modal"
+      >
+        <CardModal closeModal={closeModal} />
+      </Modal>
     </CardContainer>
   );
 };

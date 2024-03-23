@@ -64,8 +64,8 @@ export const HeartBtn = styled.button`
 `;
 
 export const HeartSvg = styled.svg`
-  fill: ${(p) => (p.isClicked ? p.theme.colors.red : "#fff")};
-  stroke: ${(p) => (p.isClicked ? p.theme.colors.red : "#101828")};
+  /* fill: ${(p) => (p.isClicked ? p.theme.colors.red : "#fff")};
+  stroke: ${(p) => (p.isClicked ? p.theme.colors.red : "#101828")}; */
 
   &:hover {
     fill: ${(p) => p.theme.colors.red};
@@ -142,7 +142,7 @@ export const OptionsItem = styled.li`
   height: 44px;
 `;
 
-export const Optionstext = styled.li`
+export const Optionstext = styled.p`
   font-weight: 500;
   font-size: 16px;
   line-height: 125%;
