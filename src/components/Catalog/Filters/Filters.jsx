@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { getAllCampers } from "../../../redux/operations";
 import {
   EquipmentFilterBox,
   FilterButton,
@@ -12,8 +14,20 @@ import {
   SearchBtn,
   TypeFilterBox,
 } from "./Filters.styled";
+import { useEffect } from "react";
+// import { selectCampers } from "../../../redux/selectors";
 
 export const Filters = () => {
+  const dispatch = useDispatch(); // Зберегти результат виклику useDispatch у змінну dispatch
+
+  useEffect(() => {
+    // Виклик функції getAllCampers один раз при завантаженні компоненту
+    dispatch(getAllCampers());
+  }, [dispatch]); // Передайте dispatch в масив залежностей useEffect
+
+  //   const campersList = useSelector(selectCampers);
+  //   console.log(campersList);
+
   return (
     <div>
       <LocationForm>
