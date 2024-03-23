@@ -15,6 +15,8 @@ export const CarImg = styled.img`
   border-radius: 10px;
   width: 290px;
   height: 310px;
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const CardInfoBox = styled.div`
@@ -44,6 +46,11 @@ export const CardTitle = styled.h2`
   color: ${(p) => p.theme.colors.black};
 `;
 
+export const PriceBox = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
 export const CardPrice = styled.p`
   font-weight: 600;
   font-size: 24px;
@@ -51,10 +58,24 @@ export const CardPrice = styled.p`
   color: ${(p) => p.theme.colors.black};
 `;
 
+export const HeartBtn = styled.button`
+  border: none;
+  background: none;
+`;
+
+export const HeartSvg = styled.svg`
+  fill: ${(p) => (p.isClicked ? p.theme.colors.red : "#fff")};
+  stroke: ${(p) => (p.isClicked ? p.theme.colors.red : "#101828")};
+
+  &:hover {
+    fill: ${(p) => p.theme.colors.red};
+    stroke: ${(p) => p.theme.colors.red};
+  }
+`;
+
 // reviews box
 
 export const ReviewsInfoBox = styled.div`
-  /* width: 267px; */
   height: 24px;
   display: flex;
   gap: 16px;
@@ -96,6 +117,57 @@ export const DescriptionText = styled.p`
   line-height: 150%;
   color: ${(p) => p.theme.colors.grey};
   overflow: hidden;
-  white-space: nowrap; /* Запобігає переносу тексту */
+  white-space: nowrap;
   text-overflow: ellipsis;
+  margin-bottom: 24px;
+`;
+
+// options
+
+export const OptionsList = styled.ul`
+  width: 526px;
+  height: 96px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 8px;
+  margin-bottom: 24px;
+`;
+
+export const OptionsItem = styled.li`
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: ${(p) => p.theme.colors.lightGrey};
+  display: flex;
+  gap: 8px;
+  height: 44px;
+`;
+
+export const Optionstext = styled.li`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+// button
+
+export const ShowMoreBtn = styled.button`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #fff;
+
+  border: none;
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background: ${(p) => p.theme.colors.red};
+  transition: ${(p) => p.theme.transition};
+
+  &:hover {
+    background-color: #d84343;
+  }
 `;
