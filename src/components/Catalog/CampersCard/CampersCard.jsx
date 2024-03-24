@@ -46,12 +46,6 @@ export const CampersCard = ({
     transmission,
   },
 }) => {
-  //   const [isClicked, setIsClicked] = useState(false);
-
-  //   const handleHeartClick = () => {
-  //     setIsClicked(!isClicked);
-  //   };
-
   // modal
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -136,9 +130,6 @@ export const CampersCard = ({
             <Optionstext>{details.beds} beds</Optionstext>
           </OptionsItem>
           <OptionsItem>
-            {/* <svg width="20px" height="20px">
-              <use xlinkHref={sprite + "#ac"} />
-            </svg> */}
             <PiWind size="20" />
             <Optionstext>AC</Optionstext>
           </OptionsItem>
@@ -146,7 +137,6 @@ export const CampersCard = ({
         <ShowMoreBtn onClick={openModal}>Show more</ShowMoreBtn>
       </CardInfoBox>
 
-      {/* Modal Component */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}

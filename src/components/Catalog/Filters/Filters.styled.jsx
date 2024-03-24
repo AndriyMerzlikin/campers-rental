@@ -62,7 +62,6 @@ export const HorizontalLine = styled.hr`
 `;
 
 export const TypeFilterBox = styled.div`
-  /* border: 1px solid black; */
   width: 360px;
   height: 167px;
   margin-bottom: 64px;

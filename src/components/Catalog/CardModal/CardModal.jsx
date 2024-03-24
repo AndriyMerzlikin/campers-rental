@@ -1,4 +1,8 @@
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import sprite from "../../../assets/sprite.svg";
+import { Features } from "../Features/Features";
+import { Reviews } from "../Reviews/Reviews";
 import {
   CarImg,
   CardPrice,
@@ -8,6 +12,7 @@ import {
   HorizontalLine,
   ImgList,
   InfoContainer,
+  InfoMenuBtn,
   InformList,
   LocationBox,
   LocationText,
@@ -22,6 +27,20 @@ const CardModal = ({ closeModal, value }) => {
   // eslint-disable-next-line react/prop-types
   const { name, rating, reviews, location, price, gallery, description } =
     value;
+
+  const [showFeatures, setShowFeatures] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
+
+  const handleFeaturesClick = () => {
+    setShowFeatures(true);
+    setShowReviews(false);
+  };
+
+  const handleReviewsClick = () => {
+    setShowReviews(true);
+    setShowFeatures(false);
+  };
+
   return (
     <ModalContainer>
       <InfoContainer>
@@ -65,13 +84,17 @@ const CardModal = ({ closeModal, value }) => {
         <div>
           <InformList>
             <li>
-              <button>Features</button>
+              <InfoMenuBtn onClick={handleFeaturesClick}>Features</InfoMenuBtn>
             </li>
             <li>
-              <button>Reviews</button>
+              <InfoMenuBtn onClick={handleReviewsClick}>Reviews</InfoMenuBtn>
             </li>
           </InformList>
           <HorizontalLine />
+
+          {showFeatures && <Features value={value} />}
+          {showReviews && <Reviews />}
+          
         </div>
       </div>
       <CloseBtn onClick={closeModal}>

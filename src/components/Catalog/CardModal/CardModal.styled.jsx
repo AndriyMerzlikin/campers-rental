@@ -108,6 +108,15 @@ export const InformList = styled.ul`
   gap: 40px;
 `;
 
+export const InfoMenuBtn = styled.button`
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: ${(p) => p.theme.colors.black};
+  border: none;
+  background-color: transparent;
+`;
+
 export const HorizontalLine = styled.hr`
   border: none;
   border-top: 1px solid rgba(16, 24, 40, 0.1);

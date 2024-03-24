@@ -15,18 +15,13 @@ import {
   TypeFilterBox,
 } from "./Filters.styled";
 import { useEffect } from "react";
-// import { selectCampers } from "../../../redux/selectors";
 
 export const Filters = () => {
-  const dispatch = useDispatch(); // Зберегти результат виклику useDispatch у змінну dispatch
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    // Виклик функції getAllCampers один раз при завантаженні компоненту
     dispatch(getAllCampers());
-  }, [dispatch]); // Передайте dispatch в масив залежностей useEffect
-
-  //   const campersList = useSelector(selectCampers);
-  //   console.log(campersList);
+  }, [dispatch]);
 
   return (
     <div>

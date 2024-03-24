@@ -1,4 +1,3 @@
-// import { PiWind } from "react-icons/pi";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -150,11 +149,6 @@ export const Optionstext = styled.p`
   text-align: center;
   color: ${(p) => p.theme.colors.black};
 `;
-
-// export const Icon = styled(PiWind)`
-//   width: 20px;
-//   height: 20px;
-// `;
 
 // button
 

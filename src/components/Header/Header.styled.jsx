@@ -14,6 +14,7 @@ export const HeaderContainer = styled.header`
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   background-color: ${(p) => p.theme.colors.lightGrey};
   display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
