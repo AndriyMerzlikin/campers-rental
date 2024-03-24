@@ -1,22 +1,116 @@
-import Modal from "react-modal";
 import styled from "styled-components";
 
-// export const ModalContainer = styled.div`
-//   border-radius: 20px;
-//   padding: 40px;
-//   width: 982px;
-//   height: 720px;
-export const CustomModal = styled(Modal)`
-  /* Стилі для оверлею */
-  .ReactModal__Overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+export const ModalContainer = styled.div`
+  position: relative;
+`;
 
-  /* Стилі для контенту модального вікна */
-  .ReactModal__Content {
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 20px;
-    /* Додайте будь-які інші стилі, які вам потрібні */
-  }
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+`;
+
+// info
+export const InfoContainer = styled.div`
+  margin-bottom: 24px;
+`;
+
+export const CardTitle = styled.h2`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: ${(p) => p.theme.colors.black};
+  margin-bottom: 8px;
+`;
+
+// reviews
+
+export const ReviewsInfoBox = styled.div`
+  height: 24px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+`;
+
+export const ReviewsBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
+export const ReviewsLink = styled.a`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+export const LocationBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
+export const LocationText = styled.div`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+// price
+
+export const CardPrice = styled.p`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+// img
+
+export const ImgList = styled.ul`
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+`;
+
+export const CarImg = styled.img`
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+`;
+
+// descr
+
+export const DescriptionText = styled.p`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: ${(p) => p.theme.colors.grey};
+  margin-bottom: 44px;
+`;
+
+// info
+
+export const InformList = styled.ul`
+  display: flex;
+  gap: 40px;
+`;
+
+export const HorizontalLine = styled.hr`
+  border: none;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  width: 100%;
+  margin: 20px 0;
 `;

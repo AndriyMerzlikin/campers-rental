@@ -1,3 +1,4 @@
+// import { PiWind } from "react-icons/pi";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -64,8 +65,8 @@ export const HeartBtn = styled.button`
 `;
 
 export const HeartSvg = styled.svg`
-  /* fill: ${(p) => (p.isClicked ? p.theme.colors.red : "#fff")};
-  stroke: ${(p) => (p.isClicked ? p.theme.colors.red : "#101828")}; */
+  fill: #fff;
+  stroke: #101828;
 
   &:hover {
     fill: ${(p) => p.theme.colors.red};
@@ -149,6 +150,11 @@ export const Optionstext = styled.p`
   text-align: center;
   color: ${(p) => p.theme.colors.black};
 `;
+
+// export const Icon = styled(PiWind)`
+//   width: 20px;
+//   height: 20px;
+// `;
 
 // button
 

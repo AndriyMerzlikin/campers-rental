@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 Modal.setAppElement("#root");
+import { PiWind } from "react-icons/pi";
 
 import sprite from "../../../assets/sprite.svg";
 import {
@@ -57,10 +58,12 @@ export const CampersCard = ({
 
   const openModal = () => {
     setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    document.body.style.overflow = "auto";
   };
 
   return (
@@ -133,9 +136,10 @@ export const CampersCard = ({
             <Optionstext>{details.beds} beds</Optionstext>
           </OptionsItem>
           <OptionsItem>
-            <svg width="20px" height="20px">
+            {/* <svg width="20px" height="20px">
               <use xlinkHref={sprite + "#ac"} />
-            </svg>
+            </svg> */}
+            <PiWind size="20" />
             <Optionstext>AC</Optionstext>
           </OptionsItem>
         </OptionsList>
@@ -147,8 +151,50 @@ export const CampersCard = ({
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         contentLabel="Modal"
+        style={{
+          overlay: {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(7, 18, 19, 0.4)",
+          },
+          content: {
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            border: "none",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "20px",
+            outline: "none",
+            padding: "40px",
+            width: "982px",
+            height: "720px",
+            maxWidth: "80%", // Optional: set the maximum width of the modal
+            maxHeight: "80%", // Optional: set the maximum height of the modal
+          },
+        }}
       >
-        <CardModal closeModal={closeModal} />
+        <CardModal
+          closeModal={closeModal}
+          value={{
+            name,
+            gallery,
+            price,
+            location,
+            reviews,
+            rating,
+            description,
+            adults,
+            details,
+            engine,
+            transmission,
+          }}
+        />
       </Modal>
     </CardContainer>
   );
