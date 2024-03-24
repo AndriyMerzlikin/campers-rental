@@ -94,6 +94,7 @@ Error generating stack: `+i.message+`
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   background-color: ${e=>e.theme.colors.lightGrey};
   display: flex;
+  justify-content: center;
   align-items: center;
 `,P1=xo.div`
   width: 100%;
@@ -144,7 +145,7 @@ img {
 button {
   cursor: pointer;
 }
-`,T1=()=>D.jsxs(D.Fragment,{children:[D.jsx(O1,{}),D.jsxs(x1,{children:[D.jsx(R.Suspense,{fallback:null,children:D.jsx(ig,{})}),D.jsx(N1,{})]})]}),Tf=R.lazy(()=>Ia(()=>import("./HomePage-BplutAeT.js"),__vite__mapDeps([]))),L1=R.lazy(()=>Ia(()=>import("./CatalogPage-BKOcACMv.js"),__vite__mapDeps([]))),A1=R.lazy(()=>Ia(()=>import("./FavoritesPage-g2ob73ex.js"),__vite__mapDeps([])));function j1(){return D.jsxs(sg,{children:[D.jsxs(An,{path:"/",element:D.jsx(T1,{}),children:[D.jsx(An,{index:!0,element:D.jsx(Tf,{})}),D.jsx(An,{path:"catalog",element:D.jsx(L1,{})}),D.jsx(An,{path:"favorites",element:D.jsx(A1,{})})]}),D.jsx(An,{path:"*",element:D.jsx(Tf,{})})]})}const z1={colors:{black:"#101828",grey:"#475467",red:"#E44848",yellow:"#FFC531",lightGrey:"#F2F4F7",veryLightGrey:"#F7F7F7"},transition:"200ms cubic-bezier(0.4,0,0.2,1)"};var bh={exports:{}},em={};/**
+`,T1=()=>D.jsxs(D.Fragment,{children:[D.jsx(O1,{}),D.jsxs(x1,{children:[D.jsx(R.Suspense,{fallback:null,children:D.jsx(ig,{})}),D.jsx(N1,{})]})]}),Tf=R.lazy(()=>Ia(()=>import("./HomePage-weOTxhxL.js"),__vite__mapDeps([]))),L1=R.lazy(()=>Ia(()=>import("./CatalogPage-C98XYsBE.js"),__vite__mapDeps([]))),A1=R.lazy(()=>Ia(()=>import("./FavoritesPage-jUHJndXH.js"),__vite__mapDeps([])));function j1(){return D.jsxs(sg,{children:[D.jsxs(An,{path:"/",element:D.jsx(T1,{}),children:[D.jsx(An,{index:!0,element:D.jsx(Tf,{})}),D.jsx(An,{path:"catalog",element:D.jsx(L1,{})}),D.jsx(An,{path:"favorites",element:D.jsx(A1,{})})]}),D.jsx(An,{path:"*",element:D.jsx(Tf,{})})]})}const z1={colors:{black:"#101828",grey:"#475467",red:"#E44848",yellow:"#FFC531",lightGrey:"#F2F4F7",veryLightGrey:"#F7F7F7"},transition:"200ms cubic-bezier(0.4,0,0.2,1)"};var bh={exports:{}},em={};/**
  * @license React
  * use-sync-external-store-with-selector.production.min.js
  *
