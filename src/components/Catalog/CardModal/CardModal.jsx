@@ -21,6 +21,7 @@ import {
   ReviewsInfoBox,
   ReviewsLink,
 } from "./CardModal.styled";
+import { OrderForm } from "../OrderForm/OrderForm";
 
 // eslint-disable-next-line react/prop-types
 const CardModal = ({ closeModal, value }) => {
@@ -91,10 +92,9 @@ const CardModal = ({ closeModal, value }) => {
             </li>
           </InformList>
           <HorizontalLine />
-
+          <OrderForm />
           {showFeatures && <Features value={value} />}
           {showReviews && <Reviews />}
-          
         </div>
       </div>
       <CloseBtn onClick={closeModal}>
