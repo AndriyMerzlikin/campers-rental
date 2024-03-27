@@ -123,3 +123,8 @@ export const HorizontalLine = styled.hr`
   width: 100%;
   margin: 20px 0;
 `;
+
+export const InformBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;

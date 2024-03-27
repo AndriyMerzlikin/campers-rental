@@ -1,12 +1,17 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
+import sprite from "../../../assets/sprite.svg";
 import {
+  CalendarSvg,
+  CommentField,
+  DateField,
+  Datebox,
   Errormsg,
-  Field,
   Form,
   FormContainer,
   FormDescr,
   FormTitle,
+  NameField,
   SubmitBtn,
 } from "./OrderForm.styled";
 
@@ -39,7 +44,7 @@ export const OrderForm = () => {
       >
         {({ errors, touched }) => (
           <Form>
-            <Field name="name" placeholder="Name" />
+            <NameField name="name" placeholder="Name" />
             {touched.name && errors.name ? (
               <Errormsg
                 name="name"
@@ -49,19 +54,24 @@ export const OrderForm = () => {
             ) : null}
             {/* <ErrorMessage name="name" /> */}
 
-            <Field name="email" placeholder="Email" type="email" />
+            <NameField name="email" placeholder="Email" type="email" />
             {touched.email && errors.email ? (
               <Errormsg name="email" component={"span"} />
             ) : null}
             {/* <ErrorMessage name="email" /> */}
+            <Datebox>
+              <DateField name="bookingdate" placeholder="Booking date" />
+              <CalendarSvg width="24px" height="24px">
+                <use xlinkHref={sprite + "#calendar"} />
+              </CalendarSvg>
+            </Datebox>
 
-            <Field name="bookingdate" placeholder="Booking date" />
             {touched.bookingdate && errors.bookingdate ? (
               <Errormsg name="bookingdate" component={"span"} />
             ) : null}
             {/* <ErrorMessage name="bookingdate" /> */}
 
-            <Field name="comment" placeholder="Comment" />
+            <CommentField name="comment" placeholder="Comment" />
 
             <SubmitBtn type="submit">Send</SubmitBtn>
           </Form>

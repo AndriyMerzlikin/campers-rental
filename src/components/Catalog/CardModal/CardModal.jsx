@@ -13,6 +13,7 @@ import {
   ImgList,
   InfoContainer,
   InfoMenuBtn,
+  InformBox,
   InformList,
   LocationBox,
   LocationText,
@@ -31,13 +32,16 @@ const CardModal = ({ closeModal, value }) => {
 
   const [showFeatures, setShowFeatures] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
+  const [showOrderForm, setShowOrderForm] = useState(false);
 
   const handleFeaturesClick = () => {
+    setShowOrderForm(true);
     setShowFeatures(true);
     setShowReviews(false);
   };
 
   const handleReviewsClick = () => {
+    setShowOrderForm(true);
     setShowReviews(true);
     setShowFeatures(false);
   };
@@ -92,9 +96,12 @@ const CardModal = ({ closeModal, value }) => {
             </li>
           </InformList>
           <HorizontalLine />
-          <OrderForm />
-          {showFeatures && <Features value={value} />}
-          {showReviews && <Reviews />}
+          <InformBox>
+            {showFeatures && <Features value={value} />}
+            {showReviews && <Reviews />}
+            {showOrderForm && <OrderForm />}
+          </InformBox>
+          {/* <OrderForm /> */}
         </div>
       </div>
       <CloseBtn onClick={closeModal}>
