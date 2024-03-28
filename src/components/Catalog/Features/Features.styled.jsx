@@ -32,3 +32,9 @@ export const Optionstext = styled.p`
 `;
 
 // details
+
+export const HorizontalLine = styled.hr`
+  width: 430px;
+  border: none;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+`;

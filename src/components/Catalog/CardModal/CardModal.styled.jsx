@@ -106,6 +106,11 @@ export const DescriptionText = styled.p`
 export const InformList = styled.ul`
   display: flex;
   gap: 40px;
+  max-width: 216px;
+`;
+
+export const InformItem = styled.li`
+  position: relative;
 `;
 
 export const InfoMenuBtn = styled.button`
@@ -115,6 +120,14 @@ export const InfoMenuBtn = styled.button`
   color: ${(p) => p.theme.colors.black};
   border: none;
   background-color: transparent;
+`;
+
+export const RedLine = styled.hr`
+  position: absolute;
+  top: 36px;
+  width: 100%;
+  border: none;
+  border-top: 5px solid ${(p) => p.theme.colors.red};
 `;
 
 export const HorizontalLine = styled.hr`

@@ -14,10 +14,12 @@ import {
   InfoContainer,
   InfoMenuBtn,
   InformBox,
+  InformItem,
   InformList,
   LocationBox,
   LocationText,
   ModalContainer,
+  RedLine,
   ReviewsBox,
   ReviewsInfoBox,
   ReviewsLink,
@@ -33,17 +35,23 @@ const CardModal = ({ closeModal, value }) => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
   const [showOrderForm, setShowOrderForm] = useState(false);
+  const [showRedLine, setShowRedLine] = useState(false);
+  const [clickedButton, setClickedButton] = useState(null);
 
   const handleFeaturesClick = () => {
     setShowOrderForm(true);
+    setShowRedLine(true);
     setShowFeatures(true);
     setShowReviews(false);
+    setClickedButton("Features");
   };
 
   const handleReviewsClick = () => {
     setShowOrderForm(true);
+    setShowRedLine(true);
     setShowReviews(true);
     setShowFeatures(false);
+    setClickedButton("Reviews");
   };
 
   return (
@@ -88,17 +96,19 @@ const CardModal = ({ closeModal, value }) => {
 
         <div>
           <InformList>
-            <li>
+            <InformItem>
               <InfoMenuBtn onClick={handleFeaturesClick}>Features</InfoMenuBtn>
-            </li>
-            <li>
+              {clickedButton === "Features" && showRedLine && <RedLine />}
+            </InformItem>
+            <InformItem>
               <InfoMenuBtn onClick={handleReviewsClick}>Reviews</InfoMenuBtn>
-            </li>
+              {clickedButton === "Reviews" && showRedLine && <RedLine />}
+            </InformItem>
           </InformList>
           <HorizontalLine />
           <InformBox>
             {showFeatures && <Features value={value} />}
-            {showReviews && <Reviews />}
+            {showReviews && <Reviews value={value} />}
             {showOrderForm && <OrderForm />}
           </InformBox>
           {/* <OrderForm /> */}

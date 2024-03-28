@@ -164,8 +164,8 @@ export const CampersCard = ({
             padding: "40px",
             width: "982px",
             height: "720px",
-            maxWidth: "80%", // Optional: set the maximum width of the modal
-            maxHeight: "80%", // Optional: set the maximum height of the modal
+            maxWidth: "80%",
+            maxHeight: "80%",
           },
         }}
       >

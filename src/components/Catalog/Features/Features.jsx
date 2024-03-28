@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import {
   FeaturesContainer,
+  HorizontalLine,
   OptionsItem,
   OptionsList,
   Optionstext,
@@ -78,7 +79,7 @@ export const Features = ({ value }) => {
 
       <div>
         <h3>Vehicle details</h3>
-        <hr />
+        <HorizontalLine />
         <ul>
           <li>
             <p>Form</p>
