@@ -31,10 +31,40 @@ export const Optionstext = styled.p`
   color: ${(p) => p.theme.colors.black};
 `;
 
-// details
+// vehicle details
 
 export const HorizontalLine = styled.hr`
   width: 430px;
   border: none;
   border-top: 1px solid rgba(16, 24, 40, 0.1);
+  margin-bottom: 14px;
+`;
+
+export const DetailsItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+`;
+
+export const DetailsTitle = styled.h3`
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+export const DetailsName = styled.p`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+export const DetailsValue = styled.span`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+  color: ${(p) => p.theme.colors.black};
 `;

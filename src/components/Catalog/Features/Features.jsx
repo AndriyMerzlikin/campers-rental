@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
 import {
+  DetailsItem,
+  DetailsName,
+  DetailsTitle,
+  DetailsValue,
   FeaturesContainer,
   HorizontalLine,
   OptionsItem,
@@ -12,8 +16,19 @@ import { PiWind } from "react-icons/pi";
 // eslint-disable-next-line react/prop-types
 export const Features = ({ value }) => {
   // eslint-disable-next-line react/prop-types
-  const { adults, details, engine, transmission } = value;
-
+  const {
+    adults,
+    details,
+    engine,
+    transmission,
+    form,
+    length,
+    width,
+    height,
+    tank,
+    consumption,
+  } = value;
+  console.log(value);
   return (
     <FeaturesContainer>
       <OptionsList>
@@ -78,33 +93,33 @@ export const Features = ({ value }) => {
       </OptionsList>
 
       <div>
-        <h3>Vehicle details</h3>
+        <DetailsTitle>Vehicle details</DetailsTitle>
         <HorizontalLine />
         <ul>
-          <li>
-            <p>Form</p>
-            <span></span>
-          </li>
-          <li>
-            <p>Length</p>
-            <span></span>
-          </li>
-          <li>
-            <p>Width</p>
-            <span></span>
-          </li>
-          <li>
-            <p>Height</p>
-            <span></span>
-          </li>
-          <li>
-            <p>Tank</p>
-            <span></span>
-          </li>
-          <li>
-            <p>Consumption</p>
-            <span></span>
-          </li>
+          <DetailsItem>
+            <DetailsName>Form</DetailsName>
+            <DetailsValue>{form}</DetailsValue>
+          </DetailsItem>
+          <DetailsItem>
+            <DetailsName>Length</DetailsName>
+            <DetailsValue>{length}</DetailsValue>
+          </DetailsItem>
+          <DetailsItem>
+            <DetailsName>Width</DetailsName>
+            <DetailsValue>{width}</DetailsValue>
+          </DetailsItem>
+          <DetailsItem>
+            <DetailsName>Height</DetailsName>
+            <DetailsValue>{height}</DetailsValue>
+          </DetailsItem>
+          <DetailsItem>
+            <DetailsName>Tank</DetailsName>
+            <DetailsValue>{tank}</DetailsValue>
+          </DetailsItem>
+          <DetailsItem>
+            <DetailsName>Consumption</DetailsName>
+            <DetailsValue>{consumption}</DetailsValue>
+          </DetailsItem>
         </ul>
       </div>
     </FeaturesContainer>

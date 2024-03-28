@@ -32,7 +32,9 @@ import CardModal from "../CardModal/CardModal";
 // eslint-disable-next-line react/prop-types
 export const CampersCard = ({
   // eslint-disable-next-line react/prop-types
-  value: {
+  value,
+}) => {
+  const {
     name,
     gallery,
     price,
@@ -44,8 +46,7 @@ export const CampersCard = ({
     details,
     engine,
     transmission,
-  },
-}) => {
+  } = value;
   // modal
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -169,22 +170,7 @@ export const CampersCard = ({
           },
         }}
       >
-        <CardModal
-          closeModal={closeModal}
-          value={{
-            name,
-            gallery,
-            price,
-            location,
-            reviews,
-            rating,
-            description,
-            adults,
-            details,
-            engine,
-            transmission,
-          }}
-        />
+        <CardModal closeModal={closeModal} value={value} />
       </Modal>
     </CardContainer>
   );
