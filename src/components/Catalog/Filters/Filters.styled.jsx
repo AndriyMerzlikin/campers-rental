@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const LocationForm = styled.form`
+  position: relative;
   width: 360px;
   height: 88px;
   box-sizing: border-box;
@@ -25,10 +26,17 @@ export const LocationInput = styled.input`
 
   border-radius: 10px;
   border: none;
-  padding: 18px 18px 18px 18px;
+  padding: 18px 18px 18px 44px;
   width: 360px;
   height: 56px;
   background: ${(p) => p.theme.colors.veryLightGrey};
+`;
+
+export const LocationSvg = styled.svg`
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 18px;
 `;
 
 export const FiltersText = styled.h4`
@@ -77,6 +85,83 @@ export const FilterItem = styled.li`
   width: 114px;
   height: 95px;
 `;
+
+//
+
+export const CheckboxLabel = styled.label`
+  cursor: pointer;
+`;
+
+export const CheckboxInput = styled.input`
+  position: absolute;
+  opacity: 0;
+`;
+
+export const CheckboxCntnr = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  /* border: 1px solid
+    ${(p) => (p.checked ? p.theme.colors.red : "rgba(16, 24, 40, 0.2)")}; */
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 17px 18px;
+  width: 115px;
+  height: 95px;
+
+  ${CheckboxInput}:checked + & {
+    border-color: ${(p) => p.theme.colors.red};
+  }
+`;
+
+export const CheckboxText = styled.p`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+//
+
+export const RadioLabel = styled.label`
+  width: 100px;
+  height: 95px;
+  cursor: pointer;
+`;
+
+export const RadioInput = styled.input`
+  display: none;
+`;
+
+export const RadioCntnr = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+
+  width: 100%;
+  height: 95px;
+
+  ${RadioInput}:checked + & {
+    border-color: ${(p) => p.theme.colors.red};
+  }
+`;
+
+export const RadioText = styled.span`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: ${(p) => p.theme.colors.black};
+`;
+
+//
 
 export const FilterButton = styled.button`
   border: 1px solid rgba(16, 24, 40, 0.2);
