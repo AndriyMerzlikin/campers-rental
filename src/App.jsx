@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, HashRouter, Routes } from "react-router-dom";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
@@ -8,14 +8,16 @@ import SharedLayout from "./components/SharedLayout/SharedLayout";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="catalog" element={<CatalogPage />} />
-        <Route path="favorites" element={<FavoritesPage />} />
-      </Route>
-      <Route path="*" element={<HomePage />} />
-    </Routes>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="catalog" element={<CatalogPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
+        </Route>
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
